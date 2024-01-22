@@ -1,2 +1,22 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import { generations } from "./generations";
+    const greetingObject = {
+        greeting : "hello",
+        name : "world"
+    };
+    const data = [
+        'yellow',
+        'red',
+        'blue',
+    ]
+</script>
+
+<h1>{greetingObject.greeting} to {greetingObject.name}</h1>
+{#each data as color, i (color)}
+<div>{i+1}:{color}</div>
+{/each}
+
+<style>
+
+</style>
+

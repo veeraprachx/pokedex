@@ -16,6 +16,7 @@ export const load = ( async ({ params, fetch }) => {
     const monsters : any = json.results;
    
     console.log(monsters);
+
     const monster = monsters[convertToInt(params.id)-1]
    
     return {
@@ -23,6 +24,5 @@ export const load = ( async ({ params, fetch }) => {
         url : monster.url,
         id : params.id,
         image : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${params.id}.png`
-
     }
 }) satisfies PageLoad;

@@ -5,7 +5,7 @@
 
     export let monster:IndexMonster;
     export let updateSearchParams : (key:string, value:string) => void; //function define
-    export let isInteractive : Boolean = false;
+   
 
 </script>
 
@@ -15,7 +15,7 @@
  <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->        
 <div class="monster">
-    <div on:click={() => isInteractive ? updateSearchParams('monsterId',monster.id) : () => {}}>
+    <div on:click={() => updateSearchParams('monsterId',monster.id)}>
         <div class = monster-content>
             <img src={monster.image} alt={monster.name}>
             {monster.name}
@@ -24,11 +24,6 @@
             {monster.id}
         </div>
     </div>
-    {#if isInteractive}
-    <div on:click={() => updateSearchParams('monsterId2', monster.id)}>
-        Add monster 2
-    </div>   
-    {/if}
 </div>
 
 

@@ -7,7 +7,7 @@
     
     export let data : PageData;
    
-    $: selectedGenerationId = $page.url.searchParams.get("generation_id") || "";
+    $: selectedGenerationId = $page.url.searchParams.get("generation_id") || "all";
     // const monsterClick = (monster : IndexMonster) =>{
     //     monsterId = monster.id;
     //     goto(`?monsterid=${monsterId}`)
@@ -17,7 +17,7 @@
     const updateSearchParams = (key: string, value:string) => {
         const searchParams = new URLSearchParams($page.url.searchParams);// get the current search url
         searchParams.set(key,value); // add the (monsterId, monster.id) to the searchParams object
-        goto(`?${searchParams.toString()}`); //*why use goto instead of return?*/
+        goto(`?${searchParams.toString()}`); 
     };
 
     let form = {
@@ -34,16 +34,12 @@
     }
 </script>
 
-
-
-
-
-
 <div class="generations">
     <button
     class="generation"
     class:active={selectedGenerationId == "all"}
     on:click={()=> updateSearchParams('generation_id', "all")}
+    data-sveltekit-preload-data
     >
     All
     </button>
@@ -52,6 +48,7 @@
         class="generation active" 
         class:active={selectedGenerationId === generation.id.toString()}
         on:click={()=> updateSearchParams('generation_id', generation.id.toString())}
+        data-sveltekit-preload-data
     >
         {generation.main_region}
 </button>
@@ -67,7 +64,6 @@
     {#each selectedMonster as monster, i (monster.id)}
        <Monster 
        monster = {monster}
-       updateSearchParams = {updateSearchParams}
         />
     {/each}
 </div>

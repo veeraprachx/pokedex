@@ -9,7 +9,7 @@ export type IndexMonster =ApiMonster & {
     image : string
 }
 export const load = ( async ({ fetch, url }) => {
-    const generationId = url.searchParams.get('generation_id') || "1";
+    const generationId = url.searchParams.get('generation_id') || "all";
     let monsterList = [];
     if(generationId === "all"){
         const reposne = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20000');

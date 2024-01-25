@@ -1,45 +1,25 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import { caughtMonster } from "$lib/stores";
+  import "../app.css";
+  import { page } from "$app/stores";
+  import { caughtMonster } from "$lib/stores";
 </script>
+
 <div class="navbar">
-    <a href="/" class:active={$page.url.pathname == "/"}>Home</a>
-    <a href="/my-monsters" class:active={$page.url.pathname == "/my-monsters"}>
-        My monster {$caughtMonster.length}
-    </a>
+  <a href="/" class:active={$page.url.pathname == "/"}>Home</a>
+  <a href="/my-monsters" class:active={$page.url.pathname == "/my-monsters"}>
+    My monster {$caughtMonster.length}
+  </a>
 </div>
 
 <div class="container">
-    <slot />
+  <slot />
 </div>
 
-<style>
-    .navbar{
-        display: flex;
-        justify-content: space-between;
-        background-color: #333;
-        color: #fff;
-       padding: 10px;
-    }
-    .navbar a{
-        color: #fff;
-        text-decoration: none;
-        padding: 4px;
-    }
-    .navbar a:hover{
-        color: #ccc;
-    }
-    .navbar a.active{
-        border: 1px solid #ccc;
-        border-radius: 4px;
-
-    }
-    :global(body){
-        margin: 0;
-    }
-    .container{
-        max-width: 90%;
-        margin: 0 auto;
-        width: 1200px;
-    }
+<style lang="postcss">
+  :global(body) {
+    margin: 0;
+  }
+  .navbar a.active {
+    @apply border border-gray-300 rounded bg-slate-600;
+  }
 </style>

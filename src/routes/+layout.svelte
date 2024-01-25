@@ -18,8 +18,9 @@
 <style lang="postcss">
   :global(body) {
     margin: 0;
+    background-color: rgb(243 244, 246);
   }
   .navbar a.active {
-    @apply border border-gray-300 rounded bg-slate-600;
+    @apply border border-gray-300 rounded bg-slate-600 text-white;
   }
 </style>

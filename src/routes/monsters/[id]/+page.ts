@@ -11,17 +11,16 @@ function convertToInt(str: any) {
 }
 
 export const load = ( async ({ params, fetch }) => {
-    console.log('hello');
     const reposne = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20000`);
     const json = await reposne.json();
     const monsters : any = json.results;
     
-    const monster = monsters.map((element : any) => element.url === params.id)
-    
-   
-    console.log(monsters);
-
-    // const monster = monsters[convertToInt(params.id)-1]
+    const monster_array = monsters.filter((element : any) => {
+        const splitUrl = element.url.split('/');
+        const id = splitUrl[splitUrl.length-2];
+        return id === params.id;
+    });
+    const monster = monster_array[0];
     return {
         name : monster.name,
         url : monster.url,

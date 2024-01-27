@@ -14,5 +14,8 @@ COPY . .
 #5 Build the app
 RUN npm run build
 
-#6 Execution
+#6 Expose port
+EXPOSE 3000
+
+#7 Execution
 CMD ["node", "build"]

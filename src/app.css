@@ -2,69 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* route/+layout.svelte */
-@layer components{
-    .navbar{
-        @apply fixed top-0 left-0 w-full h-10 z-50 flex justify-between bg-gray-300 p-1.5
-    }
-    .navbar a{
-        @apply text-black no-underline px-1 hover:text-gray-400
-    }
-    .container{
-        @apply my-16 mx-auto px-4;
-    }
+@layer components {
+  .navbar {
+    @apply fixed top-0 left-0 w-full h-10 z-50 flex justify-between bg-gray-300 p-1.5;
+  }
+  .navbar a {
+    @apply text-black no-underline px-1 hover:text-gray-400;
+  }
+  .container {
+    @apply my-16 mx-auto px-4;
+  }
 }
 /* route/+page.svelte */
-@layer components{
-    .generations{
-        @apply flex flex-row flex-wrap justify-center m-2
-    }
-    .generation {
-        @apply mx-2.5 py-1 px-2.5 border rounded-md border-black  bg-gray-200 text-gray-800 cursor-pointer
-    }
-    .generation:hover {
-        @apply bg-gray-300
-    }
-    .monsters {
-        @apply flex flex-row flex-wrap justify-center
-    }
-    .search-form {
-        @apply flex justify-center my-5
-    }
-    .search-form input[type="text"] {
-        @apply py-1 px-2.5 border border-gray-800 rounded w-48
-    }
-    .search-form input[type="submit"] {
-        @apply py-1 px-2.5 border border-gray-800 rounded ml-2.5 bg-gray-800 text-white
-    }
+@layer components {
+  .generations {
+    @apply flex flex-row flex-wrap justify-center m-2;
+  }
+  .generation {
+    @apply mx-2.5 py-1 px-2.5 border rounded-md border-black  bg-gray-200 text-gray-800 cursor-pointer;
+  }
+  .generation:hover {
+    @apply bg-gray-300;
+  }
+  .monsters {
+    @apply flex flex-row flex-wrap justify-center;
+  }
+  .search-form {
+    @apply flex justify-center my-5;
+  }
+  .search-form input[type="text"] {
+    @apply py-1 px-2.5 border border-gray-800 rounded w-48;
+  }
+  .search-form input[type="submit"] {
+    @apply py-1 px-2.5 border border-gray-800 rounded ml-2.5 bg-gray-800 text-white;
+  }
 }
 /*Monster.svelte*/
-@layer components{
-    .monster-id{
-        @apply absolute top-2 left-2 text-xs;
-    }
-    .monster{
-        @apply w-24 m-2.5 p-2.5 relative bg-gray-200 rounded-md;
-    }
-    .monster:hover{
-        @apply bg-gray-300 transition-transform duration-300 ease-in-out transform -translate-y-3;
-    }
-    .monster-content{
-        @apply flex flex-col items-center;
-    }
-    .catch-monster{
-        @apply bg-green-600 text-white rounded-md;
-    }
-    .catch-monster:hover{
-        @apply bg-green-700;
-    }
-    .release-monster{
-        @apply bg-red-500 text-white rounded-md;
-    }
-    .release-monster:hover{
-        @apply bg-red-700;
-    }
+@layer components {
+  .monster-id {
+    @apply absolute top-2 left-2 text-xs;
+  }
+  .monster {
+    @apply w-24 m-2.5 p-2.5 relative bg-gray-200 rounded-md;
+  }
+  .monster:hover {
+    @apply bg-gray-300 transition-transform duration-300 ease-in-out transform -translate-y-3;
+  }
+  .monster-content {
+    @apply flex flex-col items-center;
+  }
+  .catch-monster {
+    @apply bg-green-600 text-white rounded-md;
+  }
+  .catch-monster:hover {
+    @apply bg-green-700;
+  }
+  .release-monster {
+    @apply bg-red-500 text-white rounded-md;
+  }
+  .release-monster:hover {
+    @apply bg-red-700;
+  }
 }
-
-
